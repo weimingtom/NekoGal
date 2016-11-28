@@ -1,0 +1,7 @@
+html {
+    transition: all 1s ease;
+}
+
+body {
+    background-color: dimgrey;
+}
