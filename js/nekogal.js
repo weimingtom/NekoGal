@@ -1,4 +1,4 @@
-((instances) => {
+((instances) => { 
     class NekoGal {
         constructor(content, dom, uconfig){
             this.script = [];

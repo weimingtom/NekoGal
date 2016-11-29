@@ -1,5 +1,5 @@
 # NekoGal
-original javascript Galgame Scripter
+original javascript Galgame Scripter 
 
 目前的进度请见[Github](https://github.com/NHibiki/NekoGal)
 
