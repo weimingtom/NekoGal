@@ -1,4 +1,4 @@
-((instances) => { 
+((instances) => {
     class NekoGal {
         constructor(content, dom, uconfig){
             this.script = [];
@@ -10,7 +10,10 @@
                 interval    :  1000                            ,
                 background  :  "rgba(0,0,0,1)"                 ,
                 color       :  "rgba(255,255,255,1)"           ,
+                scriptbg    :  "rgba(255,255,255,0.3)"         ,
                 lineheight  :  10                              ,
+                startheight :  0                               ,
+                picdefault  :  "height:50px;width:50px"        ,
                 callfront   :  function(id, current) {}        ,
                 callback    :  function(id, current) {}        ,
                 id          :  parseInt(Math.random() * 100000)
@@ -70,6 +73,7 @@
             
             this.loadCSS();
             this.addClass(this.target, "ng_frame");
+            this.target.style.paddingTop = this.config.startheight + "px";
             // Load CSS
             
             var body = document.getElementsByTagName("body")[0];
@@ -225,11 +229,11 @@
                     //Keep Playing
                 }
                 else {
-                    this.bgmPlayer.src = this.script[this.current]["dialog"];
-                    this.bgmPlayer.play();
+                    this.dialogPlayer.src = this.script[this.current]["dialog"];
+                    this.dialogPlayer.play();
                 }
             } else {
-                this.bgmPlayer.pause();
+                this.dialogPlayer.pause();
             }
             //Dialog
             
@@ -293,7 +297,8 @@
         
         showPicture (callback) {
             var t = this.target;
-            t.innerHTML += '<div class="NG_SCRIPT_' + this.current + '">&nbsp&gt;&nbsp' + '<img src="' + this.script[this.current].content + '"></img><br /></div>';
+            var ps = this.script[this.current]["picsize"] || this.config.picsize;
+            t.innerHTML += '<div class="ng_scp NG_SCRIPT_' + this.current + '" style="background:' + this.config.scriptbg + '">&nbsp&gt;&nbsp' + '<img src="' + this.script[this.current].content + '" style="' + ps + '"></img><br /></div>';
             // Text
             this.onscreen ++;
             // ShowCount + 1
@@ -307,10 +312,10 @@
         
         showPlainText (callback) {
             var t = this.target;
-            var cls = "";
-            if (typeof(this.script[this.current]["color"]) === 'string') cls = 'style="color: ' + this.script[this.current]["color"] + '"';
+            var cls = 'style="background: ' + this.config.scriptbg + '"';
+            if (typeof(this.script[this.current]["color"]) === 'string') cls = 'style="color: ' + this.script[this.current]["color"] + ';background: ' + this.config.scriptbg + '"';
             // Color
-            t.innerHTML += '<div class="NG_SCRIPT_' + this.current + '" ' + cls + '>&nbsp&gt;&nbsp</div>';
+            t.innerHTML += '<div class="ng_scp NG_SCRIPT_' + this.current + '" ' + cls + '>&nbsp&gt;&nbsp</div>';
             // Text
             this.onscreen ++;
             // ShowCount + 1
@@ -357,10 +362,10 @@
             this.clickLock = true;
             this.toggleArrow(false);
             
-            var buttonBar = "<div style='display:inline;'>";
+            var buttonBar = "<div class='ng_scp' style='background:" + this.config.scriptbg + "'>";
             
             for (var key in o) {
-                buttonBar += "<div style='background: rgba(0,255,0,0.2);margin-left: 10px;' class='btn btn-success btn-sm' onclick='javascript:window[\"NG_" + this.id + "\"].btn_jump(" + o[key] + ")'>" + key + "</div>";
+                buttonBar += "<div style='background: rgba(0,255,0,0.2);margin-left: 10px;' class='btn' onclick='javascript:window[\"NG_" + this.id + "\"].btn_jump(" + o[key] + ")'>" + key + "</div>";
             }
             
             buttonBar += "</div>";

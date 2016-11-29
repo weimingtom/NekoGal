@@ -1,7 +1,10 @@
-html {
-    transition: all 1s ease;
-}
-
 body {
     background-color: dimgrey;
-} 
+}
+
+#scripter {
+    height: 320px;
+    width: 480px;
+    margin: 0 auto;
+    top: calc((100% - 320px) / 2);
+}

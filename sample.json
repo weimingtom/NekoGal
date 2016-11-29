@@ -1,6 +1,6 @@
 [{
     "type": "option",
-    "content": "你好吗QWQ ~ ",
+    "content": "你好吗QWQ",
     "duration": 10,
     "color": "red",
     "bgm": "1.mp3",
@@ -8,7 +8,8 @@
     "options": {
         "好": 1,
         "不好": 2
-    }
+    },
+    "bgp": "bg.jpg"
 },{
     "type": "text",
     "content": "那最棒啦 ～",
@@ -42,28 +43,30 @@
     "content": "对了"
 },{
     "type": "picture",
-    "content": "pic.png"
+    "content": "pic.jpg",
+    "picsize": "height:50px;width:50px;",
+    "withdraw": true
 },{
     "type": "text",
     "content": "窝窝窝...还没长大..就来调戏窝",
-    "color": "blue",
-    "bgp": "pic.png"
+    "color": "blue"
 },{
     "type": "text",
-    "content": "你是不是变态...",
-    "bgm": "0",
-    "bgp": "0"
+    "content": "你是不是变态..."
 },{
     "type": "option",
     "content": "...",
     "options": {
       "是": 12,
       "不是": 11
-    }
+    },
+    "bgm": "0",
+    "bgp": "bg2.jpg"
 },{
     "type": "text",
     "content": "哼 我就知道 ..."
 },{
     "type": "text",
-    "content": "不理你了 ..."
+    "content": "不理你了 ...",
+    "bgp": "0"
 }]
