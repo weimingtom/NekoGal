@@ -2,7 +2,9 @@
     "type": "option",
     "content": "你好吗QWQ",
     "duration": 10,
-    "color": "gba(0,0,0)",
+    "color": "red",
+    "bgm": "1.mp3",
+    "clear": true,
     "options": {
         "好": 1,
         "不好": 2
@@ -17,6 +19,7 @@
 },{
     "type": "option",
     "content": "那你喜欢我吗 QWQ ～",
+    "withdraw": true,
     "options": {
       "喜欢": 4,
       "不喜欢": 5,
@@ -38,16 +41,24 @@
     "type": "text",
     "content": "对了"
 },{
-    "type": "text",
-    "content": "你有毒哦！窝窝窝...还没长大..就来调戏窝"
+    "type": "picture",
+    "content": "pic.png"
 },{
     "type": "text",
-    "content": "你是不是变态..."
+    "content": "窝窝窝...还没长大..就来调戏窝",
+    "color": "blue",
+    "bgp": "pic.png"
+},{
+    "type": "text",
+    "content": "你是不是变态...",
+    "bgm": "0",
+    "bgp": "0"
 },{
     "type": "option",
     "content": "...",
     "options": {
-      "是": 11
+      "是": 12,
+      "不是": 11
     }
 },{
     "type": "text",
